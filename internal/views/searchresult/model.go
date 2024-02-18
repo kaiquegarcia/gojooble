@@ -26,7 +26,7 @@ func newModel(
 		30,
 		10,
 	)
-	list.Title = fmt.Sprintf("%d vagas encontradas:", len(response.Opportunities))
+	list.Title = fmt.Sprintf("%d opportunities found:", len(response.Opportunities))
 	list.SetShowStatusBar(false)
 	list.SetFilteringEnabled(false)
 	list.Styles.Title = style.TitleStyle

@@ -108,12 +108,12 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 
 func (m model) View() string {
 	return fmt.Sprintf(
-		` Altere as configurações até o último campo, depois
- pressione ENTER para salvar. Se algum campo obrigatório não
- estiver preenchido, a configuração não será salva.
+		` Change all configurations field until you end on the
+ last input, then press ENTER to save. If any required field is
+ not filled, the form won't be closed.
 
- Obs.: para gerar um API_KEY, acesse a página do Jooble:
- https://jooble.org/api/about
+ Note: to generate a new API_KEY, access Jooble's form page:
+ > https://jooble.org/api/about
 
  %s
  %s
@@ -122,7 +122,7 @@ func (m model) View() string {
 `,
 		style.InputStyle.Width(40).Render("API_KEY"),
 		m.inputs[apiKey].View(),
-		style.ButtonStyle.Render("Salvar..."),
+		style.ButtonStyle.Render("Save"),
 	) + "\n"
 }
 

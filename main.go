@@ -16,7 +16,7 @@ func main() {
 	// configuration
 	conf, err := config.Load()
 	if err != nil {
-		fmt.Printf("não foi possível carregar as configurações: %s\n", err)
+		fmt.Printf("[ERROR] could not load configurations: %s\n", err)
 		return
 	}
 
@@ -25,7 +25,7 @@ func main() {
 		// force setconfig view
 		conf, err = setconfig.Run(conf)
 		if err != nil {
-			fmt.Printf("não foi possível definir a configuração: %s\n", err)
+			fmt.Printf("[ERROR] could not define the first configuration: %s\n", err)
 			return
 		}
 	}
@@ -38,7 +38,7 @@ func main() {
 	for {
 		choice, err := home.Run()
 		if err != nil {
-			fmt.Printf("não foi possível processar a escolha inicial: %s\n", err)
+			fmt.Printf("[ERROR] could not choose the next action: %s\n", err)
 			return
 		}
 
@@ -47,7 +47,7 @@ func main() {
 		case home.OptSetconfig:
 			c, err := setconfig.Run(conf)
 			if err != nil {
-				fmt.Printf("não foi possível definir a configuração: %s\n", err)
+				fmt.Printf("[ERROR] could not redefine the configuration: %s\n", err)
 				return
 			}
 
@@ -55,14 +55,14 @@ func main() {
 		case home.OptSearch:
 			response, err := search.Run(conf, joobleClient)
 			if err != nil {
-				fmt.Printf("não foi possível realizar a busca: %s\n", err)
+				fmt.Printf("[ERROR] could not search: %s\n", err)
 				return
 			}
 
 			if response != nil {
 				err = searchresult.Run(response)
 				if err != nil {
-					fmt.Printf("não foi possível apresentar o resultado da busca: %s\n", err)
+					fmt.Printf("[ERROR] could not show the search's result: %s\n", err)
 					return
 				}
 			}

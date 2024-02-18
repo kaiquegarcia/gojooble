@@ -40,7 +40,7 @@ func (j *jooble) do(
 	a.response = response
 
 	if resp.StatusCode >= http.StatusMultipleChoices && resp.StatusCode < http.StatusBadRequest {
-		fmt.Println("warning: redirect status code during request")
+		fmt.Println("[WARNING] redirect status code during request")
 	}
 
 	if resp.StatusCode >= http.StatusBadRequest && resp.StatusCode < http.StatusInternalServerError {

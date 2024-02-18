@@ -12,9 +12,9 @@ type (
 
 // options
 const (
-	OptSetconfig item = "Reconfigurar"
-	OptSearch    item = "Buscar Vagas de Emprego"
-	optQuit      item = "Sair"
+	OptSearch    item = "Search Jobs"
+	OptSetconfig item = "Change configuration"
+	optQuit      item = "Quit"
 )
 
 type model struct {
@@ -34,7 +34,7 @@ func newModel() *model {
 		30,
 		10,
 	)
-	list.Title = "O que deseja fazer agora?"
+	list.Title = "What do you wanna do?"
 	list.SetShowStatusBar(false)
 	list.SetFilteringEnabled(false)
 	list.Styles.Title = style.TitleStyle

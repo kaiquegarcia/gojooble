@@ -50,7 +50,7 @@ func newModel(current config.Configuration) *model {
 	inputs[keywords].Prompt = ""
 
 	inputs[location] = textinput.New()
-	inputs[location].Placeholder = "Alabama (opcional)"
+	inputs[location].Placeholder = "Alabama (optional)"
 	inputs[location].CharLimit = 30
 	inputs[location].Width = 34
 	inputs[location].Prompt = ""
@@ -104,19 +104,19 @@ func (m *model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 
 func (m model) View() string {
 	return fmt.Sprintf(
-		` Chegou a hora de buscar um emprego nos EUA!
- Preencha os campos abaixo para que a busca seja realizada.
+		` Now it's time to look up for a job!
+ Fill the fields above and press ENTER to search.
 
  %s  %s
  %s %s
 
  %s
 `,
-		style.InputStyle.Width(34).Render("Palavra-chave"),
-		style.InputStyle.Width(34).Render("Localidade"),
+		style.InputStyle.Width(34).Render("Keywords"),
+		style.InputStyle.Width(34).Render("Location"),
 		m.inputs[keywords].View(),
 		m.inputs[location].View(),
-		style.ButtonStyle.Render("Buscar"),
+		style.ButtonStyle.Render("Search"),
 	) + "\n"
 }
 

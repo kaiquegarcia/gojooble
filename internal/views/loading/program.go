@@ -14,7 +14,7 @@ func Start() {
 	m = newModel()
 	go func() {
 		program := tea.NewProgram(m, tea.WithAltScreen())
-		program.SetWindowTitle("#gojooble > carregando...")
+		program.SetWindowTitle("#gojooble > loading...")
 		program.Run()
 		m.quitSignal <- true
 	}()
