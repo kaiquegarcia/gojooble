@@ -7,3 +7,14 @@ I developed this just to practice [charmbracelet/bubbletea](https://github.com/c
 2. Clone this repository;
 3. Open a terminal on the root path of the cloned repository;
 4. Run `go run .` and follow the software instructions!
+
+# Execution samples
+
+## Home view
+![Screenshot of Bubbletea list view](./assets/img/home.png)
+
+## Search view
+![Screenshot of Bubbletea textinput view](./assets/img/search.png)
+
+## Search's Result view
+![Screenshot of Bubbletea list view (for results)](./assets/img/searchresult.png)
